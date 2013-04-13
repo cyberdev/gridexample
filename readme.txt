@@ -1,0 +1,2 @@
+- buat database dan table "contoh" dengan skrip database.sql
+- update library extjs pada file index.html
