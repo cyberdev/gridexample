@@ -23,13 +23,14 @@ Ext.app.SearchField = Ext.extend(Ext.form.TwinTriggerField, {
     hideTrigger1:true,
     width:180,
     hasSearch : false,
+	pageSize: 50,
     paramName : 'query',
 	emptyText:'Masukkan sebagian kata yang akan dicari...',
 
     onTrigger1Click : function(){
-        if(this.hasSearch){
+		if(this.hasSearch){
             this.el.dom.value = '';
-            var o = {start: 0, limit: 50};
+            var o = {start: 0, limit: this.pageSize};
             this.store.baseParams = this.store.baseParams || {};
             this.store.baseParams[this.paramName] = '';
             this.store.reload({params:o});
@@ -44,7 +45,7 @@ Ext.app.SearchField = Ext.extend(Ext.form.TwinTriggerField, {
             this.onTrigger1Click();
             return;
         }
-        var o = {start: 0, limit: 50};
+        var o = {start: 0, limit: this.pageSize};
         this.store.baseParams = this.store.baseParams || {};
         this.store.baseParams[this.paramName] = v;
         this.store.reload({params:o});
