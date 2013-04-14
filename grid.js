@@ -10,13 +10,16 @@ Ext.onReady(function(){
 	});
 
 	thisStore.load({params:{start: 0, limit: 5}});
+	
+	var thisCheckbox = new Ext.grid.CheckboxSelectionModel();
 
 	var thisGrid = new Ext.grid.GridPanel({// grid panel method yang di buat untuk menampilkan grid
 		renderTo: 'grid'
 		,frame:true
 		,title: 'Data Barang'
         ,store: thisStore
-        ,columns: [{
+		,sm: thisCheckbox 
+        ,columns: [thisCheckbox, {
         	header: "id" 
         	,width: 50
         	,sortable: true
@@ -44,13 +47,13 @@ Ext.onReady(function(){
         ,stripeRows: true
         ,height:250
         ,autoExpandColumn: 'nmbarang'
-        ,width: 600
+        ,width: 650
         ,title:'Grid'
-        ,tbar: ['Cari', '&nbsp;', new Ext.app.SearchField({store: thisStore, width:250, pageSize: 5})]
 		,bbar: new Ext.PagingToolbar({
 			pageSize: 5
 			,store: thisStore
 			,displayInfo: true
+			,items:['-','Cari', '&nbsp;', new Ext.app.SearchField({store: thisStore, width:250, pageSize: 5}), '-']
 		})
     });
 
