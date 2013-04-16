@@ -49,6 +49,33 @@ Ext.onReady(function(){
         ,autoExpandColumn: 'nmbarang'
         ,width: 650
         ,title:'Grid'
+        ,tbar: [{	
+			ref: '../cmdTambah',
+			tooltip: 'Tambah Data',
+			iconCls:'ico-add',
+			text: 'Tambah',
+			handler: function(){
+				alert('add');
+			}
+		},'-',{	
+			ref: '../cmdEdit',
+			//disabled: true,
+			tooltip: 'Edit Data',
+			iconCls:'ico-edit',
+			text: 'Edit',
+			handler: function(){
+				alert('edit');
+			}
+		},'-',{	
+			ref: '../cmdHapus',
+			//disabled: true,
+			tooltip: 'Hapus Data',
+			iconCls:'ico-delete',
+			text: 'Hapus',
+			handler: function(){
+				alert('delete');
+			}
+		}]
 		,bbar: new Ext.PagingToolbar({
 			pageSize: 5
 			,store: thisStore
