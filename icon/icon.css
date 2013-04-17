@@ -9,3 +9,15 @@
 .ico-delete {
     background-image: url(ico-delete.gif) !important;
 }
+
+.ico-form {
+    background-image: url(ico-form.png) !important;
+}
+
+.ico-save {
+    background-image: url(ico-save.gif) !important;
+}
+
+.ico-cancel {
+    background-image: url(ico-cancel.gif) !important;
+}
